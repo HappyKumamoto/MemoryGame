@@ -71,7 +71,7 @@ function turn(e){
     if (backTimer) return;
 
     // 裏向きのカードをクリックした場合は数字を表示する
-    if (div.innerHTML == ''){
+    if (div.innerHTML === ''){
         div.className = 'card';
         div.innerHTML = div.number; 
     }else{
@@ -90,7 +90,7 @@ function turn(e){
     }else{
         
         // 数字が1枚目と一致する場合
-        if (cardFirst.number == div.number){
+        if (cardFirst.number === div.number){
             countUnit++;
             // 見えない状態にする
             backTimer = setTimeout(function(){
@@ -98,7 +98,7 @@ function turn(e){
                 cardFirst.className = 'card finish';
                 backTimer = NaN;
                 
-                if (countUnit == 10){
+                if (countUnit === 10){
                     clearInterval(timer);  // timer終了
                 }
             }, 500)
